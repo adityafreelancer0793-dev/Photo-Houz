@@ -1,0 +1,6 @@
+{
+  "name": "PHOTO.HOUZ – Creators Studio",
+  "description": "Premium professional photography & creative studio in Bangalore. Model shoots, maternity, baby shoots, pre-wedding, podcasts, and gathering space for 35-40 guests.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
