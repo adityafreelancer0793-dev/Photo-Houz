@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, ArrowUp } from 'lucide-react';
+import { Phone, MessageSquare, ArrowUp, Instagram, MapPin } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/studioData';
 
 export const Footer: React.FC = () => {
@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
     { label: 'Features', href: '#features' },
     { label: 'Gathering Space', href: '#gathering' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'About Us', href: '#about' },
+    { label: 'Location & Map', href: '#location' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -35,33 +35,59 @@ export const Footer: React.FC = () => {
             <div className="font-display tracking-[0.22em] text-2xl font-bold text-charcoal-900 mb-1">
               {BUSINESS_INFO.name}
             </div>
-            <div className="text-[10px] tracking-[0.28em] font-semibold text-gold-600 uppercase mb-4">
-              {BUSINESS_INFO.subtitle}
+            <div className="text-[10px] tracking-[0.28em] font-semibold text-gold-600 uppercase mb-3">
+              {BUSINESS_INFO.subtitle} · {BUSINESS_INFO.locality}
             </div>
 
-            <p className="font-serif italic text-lg text-charcoal-800 mb-4 max-w-sm">
+            <p className="text-xs uppercase tracking-wider font-semibold text-charcoal-800 mb-3">
+              "{BUSINESS_INFO.catchphrase}"
+            </p>
+
+            <p className="font-serif italic text-base text-charcoal-700 mb-4 max-w-sm">
               "{BUSINESS_INFO.closingLine}"
             </p>
 
             <p className="text-xs text-charcoal-700 font-light leading-relaxed max-w-sm mb-6">
-              {BUSINESS_INFO.description} Offering calibrated lighting, multi-format shooting bays, and a dedicated 35 to 40 gathering space.
+              {BUSINESS_INFO.fullAddress}
             </p>
 
-            {/* Direct Contact Rounded Pills */}
-            <div className="flex items-center gap-3">
+            {/* Direct Contact & Social Rounded Pills */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <a
+                href={BUSINESS_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-rose-600 hover:opacity-90 text-white text-xs px-3.5 py-2 rounded-full transition-all shadow-2xs"
+                title="Follow @photo.houz on Instagram"
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                <span>@photo.houz</span>
+              </a>
+
+              <a
+                href={BUSINESS_INFO.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-sand-100 hover:bg-gold-50 text-charcoal-900 border border-sand-200 text-xs px-3.5 py-2 rounded-full transition-colors shadow-2xs"
+                title="Open Location on Google Maps"
+              >
+                <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                <span>Google Maps</span>
+              </a>
+
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="inline-flex items-center gap-2 bg-warm-beige border border-sand-200/90 hover:border-gold-400 text-charcoal-900 text-xs px-4 py-2.5 rounded-full transition-colors shadow-2xs"
+                className="inline-flex items-center gap-1.5 bg-warm-beige border border-sand-200/90 hover:border-gold-400 text-charcoal-900 text-xs px-3.5 py-2 rounded-full transition-colors shadow-2xs"
               >
                 <Phone className="w-3.5 h-3.5 text-gold-600" />
-                <span className="font-medium">{BUSINESS_INFO.formattedPhone}</span>
+                <span>{BUSINESS_INFO.formattedPhone}</span>
               </a>
 
               <a
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 hover:border-emerald-400 text-emerald-900 text-xs px-4 py-2.5 rounded-full transition-colors shadow-2xs"
+                className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 hover:border-emerald-400 text-emerald-900 text-xs px-3.5 py-2 rounded-full transition-colors shadow-2xs"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
                 <span>WhatsApp</span>
@@ -89,20 +115,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Services Quicklist */}
+          {/* Bio Services Quicklist from Instagram */}
           <div className="lg:col-span-4">
             <h4 className="text-xs uppercase tracking-widest font-semibold text-charcoal-900 mb-4">
-              Shoot Specialties
+              Studio Specialties (Mangalore)
             </h4>
             <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-charcoal-700">
-              <span>Model Shoots</span>
-              <span>Baby Shoots</span>
-              <span>Maternity Shoots</span>
-              <span>Bride-to-Be</span>
-              <span>Groom-to-Be</span>
-              <span>Pre-Wedding</span>
-              <span>Podcast & Audio</span>
-              <span>Fashion & Brands</span>
+              {BUSINESS_INFO.bioServices.map((service, i) => (
+                <span key={i} className="hover:text-gold-600 transition-colors">
+                  {service}
+                </span>
+              ))}
               <span className="col-span-2 text-gold-700 font-medium pt-1">
                 35 to 40 Gathering Space
               </span>
@@ -113,7 +136,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Clean copyright and back-to-top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-charcoal-700">
           <div>
-            © {new Date().getFullYear()} {BUSINESS_INFO.name} – {BUSINESS_INFO.subtitle}. All rights reserved.
+            © {new Date().getFullYear()} {BUSINESS_INFO.name} – {BUSINESS_INFO.subtitle}. Pumpwell, Mangalore.
           </div>
 
           <div className="flex items-center gap-6">

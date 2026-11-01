@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, X, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
+import { Eye, X, ChevronLeft, ChevronRight, Calendar, Maximize2, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { GALLERY_PHOTOS } from '../data/studioData';
 import { GalleryPhoto } from '../types';
 
@@ -71,12 +71,15 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-warm-beige border border-sand-200/80 mb-3 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-gold-500" />
               <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-gold-700">
-                Official Portfolio
+                Official Portfolio · Full View
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 font-normal tracking-tight">
               Moments Captured at PHOTO.HOUZ
             </h2>
+            <p className="text-xs text-charcoal-700 font-light mt-2 max-w-lg">
+              Authentic studio sessions, bridal portraits, and creator shoots shown in their complete, original compositions.
+            </p>
           </div>
 
           {/* Interactive PhotoFocuz-Style Rounded-Full Filter Tabs */}
@@ -97,46 +100,58 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
           </div>
         </div>
 
-        {/* Masonry / Dynamic Editorial Grid with 12 Real Uploaded Photos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredPhotos.map((photo, index) => {
-            const isWide = photo.aspect === 'landscape';
-            return (
-              <div
-                key={photo.id}
-                onClick={() => setLightboxIndex(index)}
-                className={`group relative overflow-hidden bg-sand-100 rounded-3xl border border-sand-200/90 cursor-pointer transition-all duration-300 hover:border-gold-400 hover:shadow-xl hover:-translate-y-1 ${
-                  isWide ? 'sm:col-span-2 aspect-16/10' : 'aspect-3/4'
-                }`}
-              >
+        {/* 
+          UN-CROPPED TRUE MASONRY: 
+          Uses CSS multi-columns with [column-fill:_balance]. 
+          Each photo renders with w-full h-auto and is NEVER cut or cropped!
+        */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 [column-fill:_balance]">
+          {filteredPhotos.map((photo, index) => (
+            <div
+              key={photo.id}
+              onClick={() => setLightboxIndex(index)}
+              className="break-inside-avoid mb-6 sm:mb-8 group bg-white border border-sand-200/90 rounded-3xl p-3 sm:p-3.5 shadow-sm hover:shadow-xl hover:border-gold-300 transition-all duration-300 cursor-pointer flex flex-col"
+            >
+              {/* Image Frame - 100% Full Uncut Original Ratio */}
+              <div className="relative overflow-hidden rounded-2xl bg-sand-50/90 group/img">
                 <img
                   src={photo.imageUrl}
                   alt={photo.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-auto block object-contain transition-transform duration-500 group-hover:scale-[1.015]"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
 
-                {/* Subtle scrim and hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-charcoal-900/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-7 text-white" />
-
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-md text-charcoal-900 p-2.5 rounded-full shadow-md">
-                  <Eye className="w-4 h-4" />
-                </div>
-
-                <div className="absolute bottom-5 left-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
-                  <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-2 border border-white/20">
+                {/* Category Pill Tag */}
+                <div className="absolute top-3 left-3 pointer-events-none">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] uppercase tracking-wider font-semibold text-charcoal-900 border border-sand-200/80 shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
                     {photo.categoryLabel}
                   </span>
-                  <h4 className="font-serif text-lg sm:text-xl font-normal leading-snug">
-                    {photo.title}
-                  </h4>
-                  <p className="text-xs text-white/85 font-light mt-1.5 line-clamp-2">
-                    {photo.caption}
-                  </p>
+                </div>
+
+                {/* Floating View Full Button */}
+                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/95 backdrop-blur-md text-charcoal-900 p-2.5 rounded-full shadow-md">
+                  <Maximize2 className="w-3.5 h-3.5 text-gold-600" />
                 </div>
               </div>
-            );
-          })}
+
+              {/* Descriptive Caption Container below image (never obscuring the photograph) */}
+              <div className="pt-3.5 pb-1 px-1 flex flex-col">
+                <div className="flex items-start justify-between gap-3">
+                  <h4 className="font-serif text-base sm:text-lg text-charcoal-900 font-normal leading-snug group-hover:text-gold-600 transition-colors">
+                    {photo.title}
+                  </h4>
+                  <span className="text-[10px] uppercase tracking-wider text-gold-700 font-semibold shrink-0 pt-1">
+                    Expand ↗
+                  </span>
+                </div>
+                <p className="text-xs text-charcoal-700 font-light mt-1.5 leading-relaxed">
+                  {photo.caption}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Gallery CTA with Rounded-Full Button */}
@@ -189,13 +204,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
           {/* Lightbox Container with Rounded-3XL */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-w-4xl w-full max-h-[88vh] flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            className="max-w-4xl w-full max-h-[94vh] flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
           >
-            <div className="relative flex-1 bg-black/95 overflow-hidden flex items-center justify-center max-h-[68vh] p-2">
+            <div className="relative flex-1 bg-stone-950 overflow-hidden flex items-center justify-center min-h-[50vh] max-h-[76vh] p-3 sm:p-4">
               <img
                 src={currentPhoto.imageUrl}
                 alt={currentPhoto.title}
-                className="max-w-full max-h-[66vh] object-contain rounded-xl"
+                className="max-w-full max-h-[74vh] w-auto h-auto object-contain rounded-xl shadow-lg"
                 referrerPolicy="no-referrer"
               />
             </div>

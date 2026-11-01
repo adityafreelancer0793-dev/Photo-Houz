@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-warm-beige border border-sand-200/80 w-fit mb-6">
               <span className="w-2 h-2 rounded-full bg-gold-500" />
               <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-gold-700">
-                {BUSINESS_INFO.name} · {BUSINESS_INFO.subtitle}
+                {BUSINESS_INFO.name} · {BUSINESS_INFO.locality}
               </span>
             </div>
 
@@ -32,15 +32,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
               <span className="italic font-light text-charcoal-800">Our Studio.</span>
             </h1>
 
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-4 flex items-center gap-3">
               <span className="font-serif italic text-2xl sm:text-3xl text-gold-600 tracking-wide">
                 {BUSINESS_INFO.supportingTagline}
               </span>
             </div>
 
+            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-charcoal-800 mb-4">
+              "{BUSINESS_INFO.catchphrase}"
+            </p>
+
             {/* Description */}
             <p className="text-base sm:text-lg text-charcoal-700 font-light leading-relaxed max-w-xl mb-8">
-              {BUSINESS_INFO.description} From high-fashion model portfolios and intimate maternity sessions to commercial shoots, podcast recordings, and lively creator workshops.
+              {BUSINESS_INFO.description} Pre-post wedding, podcast studio, bride-to-be dining, model portfolios, kids, maternity, and commercial productions at Pumpwell, Mangalore.
             </p>
 
             {/* Rounded CTA Buttons (PhotoFocuz style: rounded-full) */}

@@ -6,9 +6,10 @@ export const BUSINESS_INFO = {
   tagline: 'Your Story. Our Studio.',
   supportingTagline: 'Unforgettable Moments.',
   closingLine: 'Create. Capture. Cherish.',
+  catchphrase: "Just Bring Yourself! We'll Handle The Rest.",
   description: 'A creative space where ideas come to life and memories are made.',
   aboutDetailed:
-    'PHOTO.HOUZ is a creative space where ideas come to life and memories are made. From personal portraits and family milestones to professional brand photography, pre-wedding shoots, and creative productions, our studio offers the space and facilities to bring every vision to life.',
+    'PHOTO.HOUZ is a premium creators studio located at Pumpwell, Mangalore. From personal portraits, kids milestones, and intimate maternity sessions to pre & post wedding productions, podcast recordings, bride to be dining celebrations, and commercial shoots, our studio provides the space, lighting, and hospitality to bring every vision to life.',
   gatheringCapacity: '35 to 40 Gathering Space',
   gatheringDescription: 'Perfect for small events, workshops, meetings, presentations, and more.',
   audienceStatement: 'Perfect for individual creators, brands, and families gathering.',
@@ -16,8 +17,29 @@ export const BUSINESS_INFO = {
   formattedPhone: '+91 96069 60990',
   whatsappUrl:
     'https://wa.me/919606960990?text=Hello%20PHOTO.HOUZ%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20studio%20session%20%2F%20gathering%20space.',
-  location: 'Creators Studio, Premium Creative Hub',
+  instagramHandle: '@photo.houz',
+  instagramUrl: 'https://www.instagram.com/photo.houz/',
+  city: 'Mangalore',
+  locality: 'Pumpwell, Mangalore',
+  landmark: 'Near Indiana Hospital, Onex Building, 2nd Floor',
+  fullAddress: 'Onex Building, 2nd Floor, Near Indiana Hospital, Pumpwell, Mangalore, Karnataka 575002',
+  mapUrl: 'https://maps.app.goo.gl/3tXYP1U3XbAJBHKx6',
   workingHours: 'Open Daily: 9:00 AM – 9:00 PM',
+  instaStats: {
+    posts: '59',
+    followers: '750+',
+    handle: '@photo.houz',
+  },
+  bioServices: [
+    'Pre - Post Wedding',
+    'Podcast Studio',
+    'Any Celebrations',
+    'Bride to be Dining',
+    'Model Shoots',
+    'Kids & Family',
+    'Maternity',
+    'Commercial Shoots',
+  ],
 };
 
 // Studio Facility & Equipment Assets
@@ -30,6 +52,7 @@ export const STUDIO_IMAGES = {
   spaciousFloor: '/assets/aistudio/1a4e6643-89bd-485e-82ef-96c7f7734539_eaf8b1b9.jpeg',
   gatheringWorkshop: '/assets/aistudio/3ef1f8b9-2499-4379-a6c5-54f079fefb05_a4417d8e.jpeg',
   originalPoster: '/assets/aistudio/Screenshot_20261101_184154_WhatsApp_3659fc38.jpg',
+  instaProfile: '/assets/aistudio/Screenshot_20261101_205110_Instagram_1e61aaf0.jpg',
 };
 
 // 12 Newly Uploaded Real Portfolio Images
@@ -54,7 +77,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Model Shoots',
     shortDesc: 'Editorial fashion and portfolio shoots designed for aspiring & established talent.',
     fullDesc:
-      'High-impact agency-standard model portfolios, creative lookbooks, and composite cards with calibrated strobe lighting and creative textured backdrops.',
+      'High-impact agency-standard model portfolios, creative lookbooks, and composite cards with calibrated strobe lighting and creative textured backdrops in Pumpwell, Mangalore.',
     category: 'portrait',
     imageUrl: PORTFOLIO_IMAGES.maleStreetwearOrange,
     features: ['High-key & low-key lighting', 'Multiple backdrop changes', 'Makeover room access', 'High-res retouched files'],
@@ -63,8 +86,8 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'baby-shoots',
-    title: 'Baby Shoots',
-    shortDesc: 'Gentle, heartwarming baby and toddler sessions in a safe, temperature-controlled environment.',
+    title: 'Kids & Baby Shoots',
+    shortDesc: 'Gentle, heartwarming baby, toddler, and family milestone sessions in a sanitized environment.',
     fullDesc:
       'Cherish your little one’s precious milestones. Our studio is sanitised, cozy, and equipped with safe props, soft diffused lighting, and comfortable seating for parents.',
     category: 'celebration',
@@ -87,22 +110,22 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'bride-to-be',
-    title: 'Bride-to-Be',
-    shortDesc: 'Opulent bridal portraits showcasing bridal trousseau, jewelry, and radiant elegance.',
+    title: 'Bride-to-Be & Dining',
+    shortDesc: 'Opulent bridal portraits & curated Bride-to-Be private dining table celebrations.',
     fullDesc:
-      'Capture your bridal aura before the big day with dedicated vanity mirrors, detailed jewelry lighting, and luxury editorial backdrops.',
+      'Capture your bridal aura before the big day with dedicated vanity mirrors, detailed jewelry lighting, and optional private banquet dining setups for your bridal squad.',
     category: 'celebration',
     imageUrl: PORTFOLIO_IMAGES.brideGreenSareePose1,
-    features: ['Dedicated bridal dressing suite', 'Fine jewelry accent lighting', 'Full-length & close-up compositions', 'Glam squad space'],
+    features: ['Dedicated bridal dressing suite', 'Curated dining table decoration', 'Fine jewelry accent lighting', 'Full-length & close-up compositions'],
     duration: '2.5 to 3 Hours',
-    deliverables: 'High-definition bridal album selects',
+    deliverables: 'High-definition bridal album selects + celebration reels',
   },
   {
     id: 'groom-to-be',
     title: 'Groom-to-Be',
     shortDesc: 'Sharp, sophisticated portraits capturing masculine confidence, style, and celebration.',
     fullDesc:
-      'Classic suit and contemporary ethnic wear sessions featuring dramatic rim lighting, moody vignettes, and elegant staging.',
+      'Classic suit and contemporary ethnic wear sessions featuring dramatic rim lighting, moody vignettes, and elegant staging in our Mangalore studio.',
     category: 'celebration',
     imageUrl: PORTFOLIO_IMAGES.maleCasualSofa,
     features: ['Crisp architectural lighting', 'Bespoke suit framing', 'Editorial groom styling', 'Expedited turnaround'],
@@ -111,10 +134,10 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'pre-wedding',
-    title: 'Pre-Wedding',
-    shortDesc: 'Cinematic romance and heartfelt connection staged in diverse studio atmospheres.',
+    title: 'Pre & Post Wedding',
+    shortDesc: 'Cinematic romance and heartfelt connection staged across stylized studio atmospheres.',
     fullDesc:
-      'Tell your couple’s origin story with multiple stylized setups—from romantic candlelit vibes and warm wood aesthetics to modern editorial minimalism.',
+      'Tell your love story with multiple stylized setups—from romantic candlelit vibes and warm wood aesthetics to modern editorial minimalism and reception lookbooks.',
     category: 'celebration',
     imageUrl: PORTFOLIO_IMAGES.coupleLaughingTogether,
     features: ['Multiple costume & set changes', 'Cinematic video teasers', 'Curated mood board collaboration', 'Couples posing guide'],
@@ -135,7 +158,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 'fashion-brand-shoots',
-    title: 'Fashion & Brand Shoots',
+    title: 'Commercial & Brand Shoots',
     shortDesc: 'Commercial e-commerce, lookbooks, and advertising campaigns for modern brands.',
     fullDesc:
       'Elevate your brand presence with clean seamless paper backdrops, live client tethering monitor, steamer & garment racks, and production management.',
@@ -151,7 +174,7 @@ export const STUDIO_FEATURES: StudioFeature[] = [
   {
     id: 'spacious-setup',
     title: 'Spacious Studio Setup',
-    description: 'Generous floor plan with high ceilings, polished flooring, and unrestricted camera shooting distances for dynamic framing.',
+    description: 'Generous floor plan with high ceilings, polished flooring, and unrestricted camera shooting distances for dynamic framing in Pumpwell, Mangalore.',
     iconName: 'Maximize2',
     highlight: 'Expansive Shooting Floor',
   },
@@ -214,7 +237,7 @@ export const STUDIO_SHOWCASE: StudioShowcaseItem[] = [
     title: '35 to 40 Gathering & Workshop Hall',
     subtitle: 'Screenings, Meets & Masterclasses',
     description:
-      'Versatile seating for 35 to 40 guests facing a motorized HD conference projector screen, festoon ambient lighting, and tuned audio system.',
+      'Versatile seating for 35 to 40 guests facing a motorized HD conference projector screen, festoon ambient lighting, and tuned audio system in Pumpwell, Mangalore.',
     imageUrl: STUDIO_IMAGES.gatheringWorkshop,
     tag: 'Gathering Hall',
   },
@@ -298,7 +321,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'gal-couple-laugh',
     title: 'Unscripted Laughter & Warmth',
     category: 'prewedding',
-    categoryLabel: 'Pre-Wedding',
+    categoryLabel: 'Pre & Post Wedding',
     imageUrl: PORTFOLIO_IMAGES.coupleLaughingTogether,
     aspect: 'portrait',
     caption: 'Candid pre-wedding smiles on our curved studio sofa with warm natural ambient lighting.',
@@ -325,7 +348,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'gal-couple-lounge',
     title: 'Intimate Couple Chemistry',
     category: 'prewedding',
-    categoryLabel: 'Pre-Wedding',
+    categoryLabel: 'Pre & Post Wedding',
     imageUrl: PORTFOLIO_IMAGES.coupleLoungeChemistry,
     aspect: 'portrait',
     caption: 'Genuine couple affection and styling captured inside our studio lounge setup.',
@@ -361,19 +384,19 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'gal-creator-sony',
     title: 'Filmmaker & Content Creator Setup',
     category: 'podcast',
-    categoryLabel: 'Creators & Video',
+    categoryLabel: 'Creators & Commercial',
     imageUrl: PORTFOLIO_IMAGES.creatorSonyFX3,
     aspect: 'portrait',
     caption: 'Creator portrait featuring tinted eyewear and Sony Cinema Line FX3 production camera.',
   },
   {
     id: 'gal-bride-table',
-    title: 'Curated Bride-to-Be Banquet Celebration',
+    title: 'Curated Bride-to-Be Banquet Dining',
     category: 'studio',
-    categoryLabel: 'Gathering Space',
+    categoryLabel: 'Bride to be Dining',
     imageUrl: PORTFOLIO_IMAGES.brideToBeTableSetup,
     aspect: 'landscape',
-    caption: 'Personalized "Bride to Be" dining plates, golden rose florals, and champagne runner in our 35-40 event space.',
+    caption: 'Personalized "Bride to Be" dining plates, golden rose florals, and champagne runner in our 35-40 event space at Pumpwell.',
   },
   {
     id: 'gal-female-window',

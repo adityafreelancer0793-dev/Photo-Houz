@@ -12,6 +12,7 @@ import { StudioFeatures } from './components/StudioFeatures';
 import { GatheringSpace } from './components/GatheringSpace';
 import { GallerySection } from './components/GallerySection';
 import { AboutSection } from './components/AboutSection';
+import { StudioLocationMap } from './components/StudioLocationMap';
 import { ContactSection } from './components/ContactSection';
 import { BookingModal } from './components/BookingModal';
 import { Footer } from './components/Footer';
@@ -89,7 +90,10 @@ export default function App() {
         {/* 8. About PHOTO.HOUZ Section */}
         <AboutSection onOpenBooking={() => handleOpenBooking()} />
 
-        {/* 9. Contact & Booking Section */}
+        {/* 9. Studio Location & Google Maps */}
+        <StudioLocationMap />
+
+        {/* 10. Contact & Booking Section */}
         <ContactSection initialService={selectedService} />
       </main>
 

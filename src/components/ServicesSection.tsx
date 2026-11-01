@@ -45,11 +45,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             >
               <div>
                 {/* Image Container with Rounded 2XL Corner */}
-                <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand-100">
+                <div className="relative aspect-4/5 overflow-hidden rounded-2xl bg-sand-100">
                   <img
                     src={service.imageUrl}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
@@ -157,11 +157,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
 
             {/* Modal Body */}
             <div className="p-6 sm:p-8">
-              <div className="aspect-16/9 overflow-hidden rounded-2xl bg-sand-100 mb-6 shadow-sm">
+              <div className="overflow-hidden rounded-2xl bg-sand-50/90 mb-6 shadow-sm border border-sand-200/60 p-2 sm:p-3 flex items-center justify-center">
                 <img
                   src={selectedService.imageUrl}
                   alt={selectedService.title}
-                  className="w-full h-full object-cover"
+                  className="max-h-[50vh] w-auto max-w-full object-contain rounded-xl shadow-xs"
                   referrerPolicy="no-referrer"
                 />
               </div>

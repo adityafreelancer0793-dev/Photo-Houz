@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Calendar, Users, CheckCircle2, ArrowRight, Copy, Check } from 'lucide-react';
+import { Phone, MessageSquare, Calendar, Users, CheckCircle2, ArrowRight, Copy, Check, MapPin, ExternalLink, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../data/studioData';
 import { BookingFormData } from '../types';
 
@@ -153,8 +153,44 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                 <ArrowRight className="w-4 h-4 text-emerald-700 group-hover:translate-x-1 transition-transform" />
               </a>
 
-              {/* Coordinates info */}
+              {/* Coordinates & Location info */}
               <div className="space-y-3.5 text-xs text-charcoal-700 pt-6 border-t border-sand-200">
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full bg-sand-100 flex items-center justify-center text-gold-600 shrink-0">
+                    <MapPin className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-charcoal-900 block">Studio Address</span>
+                    <span>{BUSINESS_INFO.fullAddress}</span>
+                    <a
+                      href={BUSINESS_INFO.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-gold-700 hover:text-gold-900 mt-1"
+                    >
+                      <span>Open in Google Maps</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full bg-sand-100 flex items-center justify-center text-gold-600 shrink-0">
+                    <Instagram className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <span className="font-medium text-charcoal-900 block">Official Instagram</span>
+                    <a
+                      href={BUSINESS_INFO.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold-700 hover:text-gold-900 font-medium"
+                    >
+                      {BUSINESS_INFO.instagramHandle} (59 posts · 750+ followers)
+                    </a>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-3">
                   <div className="w-7 h-7 rounded-full bg-sand-100 flex items-center justify-center text-gold-600 shrink-0">
                     <Calendar className="w-3.5 h-3.5" />
@@ -171,7 +207,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                   </div>
                   <div>
                     <span className="font-medium text-charcoal-900 block">Capacity</span>
-                    <span>{BUSINESS_INFO.gatheringCapacity} (Workshops, Meets, Shoots)</span>
+                    <span>{BUSINESS_INFO.gatheringCapacity} (Bride to be dining, events, shoots)</span>
                   </div>
                 </div>
               </div>

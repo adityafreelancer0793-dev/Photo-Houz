@@ -37,16 +37,16 @@ export const StudioShowcase: React.FC<StudioShowcaseProps> = ({
         <div className="bg-white border border-sand-200/80 rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Active Big Photo with Rounded 2XL Framing */}
-            <div className="lg:col-span-7 relative group overflow-hidden bg-sand-100 rounded-2xl shadow-sm aspect-16/10">
+            <div className="lg:col-span-7 relative group overflow-hidden bg-stone-900 rounded-2xl shadow-sm min-h-[380px] sm:min-h-[460px] flex items-center justify-center p-2">
               <img
                 src={activeItem.imageUrl}
                 alt={activeItem.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
+                className="max-h-[460px] w-auto max-w-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.01]"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/70 via-charcoal-900/15 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-transparent to-transparent pointer-events-none rounded-2xl" />
 
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <span className="bg-white/95 backdrop-blur-md text-charcoal-900 text-[11px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-sand-200 shadow-xs">
                   {activeItem.tag}
                 </span>
@@ -54,14 +54,14 @@ export const StudioShowcase: React.FC<StudioShowcaseProps> = ({
 
               <button
                 onClick={() => onOpenLightbox(activeItem.imageUrl, activeItem.title, activeItem.description)}
-                className="absolute bottom-4 right-4 bg-white/90 hover:bg-gold-500 text-charcoal-900 hover:text-white p-3 rounded-full transition-all duration-200 shadow-md cursor-pointer hover:scale-110"
+                className="absolute bottom-4 right-4 z-10 bg-white/95 hover:bg-gold-500 text-charcoal-900 hover:text-white p-3 rounded-full transition-all duration-200 shadow-md cursor-pointer hover:scale-110"
                 title="View Full Resolution"
                 aria-label="Expand photo"
               >
                 <Eye className="w-4 h-4" />
               </button>
 
-              <div className="absolute bottom-4 left-5 right-20 text-white">
+              <div className="absolute bottom-4 left-5 right-20 text-white z-10">
                 <div className="text-[11px] uppercase tracking-widest text-gold-300 font-semibold mb-1">
                   {activeItem.subtitle}
                 </div>

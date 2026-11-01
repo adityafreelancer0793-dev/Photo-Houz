@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Calendar, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Phone, Calendar, Menu, X, ArrowUpRight, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/studioData';
 
 interface NavbarProps {
@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     { label: 'Features', href: '#features' },
     { label: 'Gathering Space', href: '#gathering' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'About Us', href: '#about' },
+    { label: 'Location & Map', href: '#location' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -77,7 +77,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </nav>
 
           {/* Zone 3: Direct Phone & Primary CTA */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+            <a
+              href={BUSINESS_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-warm-beige/80 hover:bg-gold-50 text-charcoal-800 hover:text-gold-600 border border-sand-200/70 transition-colors"
+              title="Follow @photo.houz on Instagram"
+              aria-label="Instagram profile"
+            >
+              <Instagram className="w-3.5 h-3.5" />
+            </a>
+
             <a
               href={`tel:${BUSINESS_INFO.phone}`}
               className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-charcoal-800 hover:text-gold-600 px-4 py-2 rounded-full bg-warm-beige/80 hover:bg-gold-50 transition-colors whitespace-nowrap border border-sand-200/70"
