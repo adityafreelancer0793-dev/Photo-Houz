@@ -12,21 +12,36 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const categories = [
-    { key: 'all', label: 'All Works' },
+    { key: 'all', label: 'All Works (12)' },
+    { key: 'bride', label: 'Bride-to-Be' },
+    { key: 'prewedding', label: 'Pre-Wedding & Couples' },
     { key: 'model', label: 'Model & Portraits' },
-    { key: 'studio', label: 'Studio & Setups' },
-    { key: 'podcast', label: 'Podcast & Audio' },
-    { key: 'maternity', label: 'Maternity' },
-    { key: 'baby', label: 'Baby Shoots' },
-    { key: 'prewedding', label: 'Pre-Wedding' },
+    { key: 'creators', label: 'Creators & Events' },
   ];
 
   const filteredPhotos =
     activeCategory === 'all'
       ? GALLERY_PHOTOS
       : GALLERY_PHOTOS.filter((p) => {
-          if (activeCategory === 'podcast') {
-            return p.category === 'podcast' || p.category === 'studio';
+          if (activeCategory === 'bride') {
+            return p.categoryLabel.toLowerCase().includes('bride');
+          }
+          if (activeCategory === 'prewedding') {
+            return p.category === 'prewedding' || p.categoryLabel.toLowerCase().includes('pre-wedding');
+          }
+          if (activeCategory === 'model') {
+            return (
+              p.categoryLabel.toLowerCase().includes('model') ||
+              p.categoryLabel.toLowerCase().includes('groom')
+            );
+          }
+          if (activeCategory === 'creators') {
+            return (
+              p.category === 'podcast' ||
+              p.category === 'studio' ||
+              p.categoryLabel.toLowerCase().includes('creators') ||
+              p.categoryLabel.toLowerCase().includes('gathering')
+            );
           }
           return p.category === activeCategory;
         });
@@ -56,7 +71,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-warm-beige border border-sand-200/80 mb-3 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-gold-500" />
               <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-gold-700">
-                Visual Showcase
+                Official Portfolio
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 font-normal tracking-tight">
@@ -82,40 +97,40 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
           </div>
         </div>
 
-        {/* Masonry / Dynamic Editorial Grid with Rounded-3XL Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Masonry / Dynamic Editorial Grid with 12 Real Uploaded Photos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredPhotos.map((photo, index) => {
-            const isWide = index % 5 === 0;
+            const isWide = photo.aspect === 'landscape';
             return (
               <div
                 key={photo.id}
                 onClick={() => setLightboxIndex(index)}
                 className={`group relative overflow-hidden bg-sand-100 rounded-3xl border border-sand-200/90 cursor-pointer transition-all duration-300 hover:border-gold-400 hover:shadow-xl hover:-translate-y-1 ${
-                  isWide ? 'sm:col-span-2 aspect-16/10' : 'aspect-4/5'
+                  isWide ? 'sm:col-span-2 aspect-16/10' : 'aspect-3/4'
                 }`}
               >
                 <img
                   src={photo.imageUrl}
                   alt={photo.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Subtle scrim and hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-charcoal-900/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-7 text-white" />
 
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-md text-charcoal-900 p-2.5 rounded-full shadow-md">
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-md text-charcoal-900 p-2.5 rounded-full shadow-md">
                   <Eye className="w-4 h-4" />
                 </div>
 
                 <div className="absolute bottom-5 left-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-2 border border-white/20">
+                  <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-2 border border-white/20">
                     {photo.categoryLabel}
                   </span>
-                  <h4 className="font-serif text-lg font-light leading-snug">
+                  <h4 className="font-serif text-lg sm:text-xl font-normal leading-snug">
                     {photo.title}
                   </h4>
-                  <p className="text-xs text-white/85 font-light mt-1 line-clamp-1">
+                  <p className="text-xs text-white/85 font-light mt-1.5 line-clamp-2">
                     {photo.caption}
                   </p>
                 </div>
@@ -127,14 +142,14 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
         {/* Gallery CTA with Rounded-Full Button */}
         <div className="mt-14 text-center">
           <p className="text-xs text-charcoal-700 font-light mb-4">
-            Looking for a specific backdrop, lighting style, or shoot format not shown above?
+            Inspired by our bridal, pre-wedding, and commercial portfolio?
           </p>
           <button
             onClick={() => onOpenBooking()}
-            className="inline-flex items-center gap-2 border border-sand-200 hover:border-gold-400 bg-sand-50 hover:bg-white text-charcoal-900 text-xs uppercase tracking-widest font-semibold px-8 py-4 rounded-full transition-all duration-200 cursor-pointer shadow-2xs hover:shadow-md"
+            className="inline-flex items-center gap-2 border border-sand-200 hover:border-gold-400 bg-sand-50 hover:bg-white text-charcoal-900 text-xs uppercase tracking-widest font-semibold px-8 py-4 rounded-full transition-all duration-200 cursor-pointer shadow-2xs hover:shadow-md hover:scale-[1.02]"
           >
             <Calendar className="w-4 h-4 text-gold-600" />
-            <span>Consult Our In-House Creative Team</span>
+            <span>Book Your Personalized Shoot at PHOTO.HOUZ</span>
           </button>
         </div>
       </div>
@@ -174,13 +189,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
           {/* Lightbox Container with Rounded-3XL */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-w-4xl w-full max-h-[85vh] flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            className="max-w-4xl w-full max-h-[88vh] flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
           >
-            <div className="relative flex-1 bg-black overflow-hidden flex items-center justify-center max-h-[65vh]">
+            <div className="relative flex-1 bg-black/95 overflow-hidden flex items-center justify-center max-h-[68vh] p-2">
               <img
                 src={currentPhoto.imageUrl}
                 alt={currentPhoto.title}
-                className="max-w-full max-h-[65vh] object-contain"
+                className="max-w-full max-h-[66vh] object-contain rounded-xl"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -193,7 +208,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
                 <h3 className="font-serif text-xl font-normal text-charcoal-900 mt-0.5">
                   {currentPhoto.title}
                 </h3>
-                <p className="text-xs text-charcoal-700 font-light mt-1">
+                <p className="text-xs text-charcoal-700 font-light mt-1 max-w-xl">
                   {currentPhoto.caption}
                 </p>
               </div>
@@ -205,7 +220,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
                     setLightboxIndex(null);
                     onOpenBooking(title);
                   }}
-                  className="bg-charcoal-900 hover:bg-gold-600 text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                  className="bg-charcoal-900 hover:bg-gold-600 text-white text-xs uppercase tracking-widest font-semibold px-7 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md"
                 >
                   Book Similar Shoot
                 </button>
