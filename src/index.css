@@ -4,49 +4,61 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Cinzel", Georgia, serif;
+  --font-script: "Alex Brush", cursive, "Playfair Display", serif;
 
-  --color-gold-50: #fbf8f2;
-  --color-gold-100: #f5eedf;
-  --color-gold-200: #eadebf;
-  --color-gold-300: #ddc69a;
-  --color-gold-400: #cfae74;
-  --color-gold-500: #b89253;
-  --color-gold-600: #9e7740;
-  --color-gold-700: #815c34;
+  --color-gold-50: #fbf8f0;
+  --color-gold-100: #f6eedb;
+  --color-gold-200: #ecdcba;
+  --color-gold-300: #e0c793;
+  --color-gold-400: #d4b26f;
+  --color-gold-500: #caa468;
+  --color-gold-600: #b89150;
+  --color-gold-700: #9a7337;
+  --color-gold-800: #7b582b;
 
-  --color-ivory: #fdfcf9;
-  --color-warm-beige: #f6f3ed;
-  --color-sand-100: #ede8df;
-  --color-sand-200: #dfd8cc;
-  --color-charcoal-900: #141414;
-  --color-charcoal-800: #222222;
-  --color-charcoal-700: #383838;
+  --color-charcoal-950: #08080a;
+  --color-charcoal-900: #0d0d11;
+  --color-charcoal-850: #121217;
+  --color-charcoal-800: #181820;
+  --color-charcoal-700: #23232c;
+  --color-charcoal-600: #32323e;
+
+  --color-sand-100: #e5e3db;
+  --color-sand-200: #c8c5b9;
+  --color-sand-300: #a9a69a;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  background-color: #ffffff;
-  color: #141414;
+  background-color: #0c0c0f;
+  color: #f5f4f0;
+}
+
+body {
+  background-color: #0c0c0f;
+  color: #f5f4f0;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #eadebf;
-  color: #141414;
+  background-color: #caa468;
+  color: #0c0c0f;
 }
 
-/* Custom scrollbar for gallery and smooth feel */
+/* Custom Luxury Gold Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #fbf8f2;
+  background: #0f0f14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cfae74;
-  border-radius: 4px;
+  background: #caa468;
+  border-radius: 9999px;
+  border: 2px solid #0f0f14;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b89253;
+  background: #e0c793;
 }

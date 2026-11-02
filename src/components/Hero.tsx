@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, Sparkles, Phone, Compass, Users } from 'lucide-react';
+import { ArrowRight, Calendar, Sparkles, Phone, Compass, Users, MapPin } from 'lucide-react';
 import { BUSINESS_INFO, STUDIO_IMAGES } from '../data/studioData';
 
 interface HeroProps {
@@ -9,80 +9,86 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) => {
   return (
-    <section id="home" className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white overflow-hidden">
-      {/* Background Soft Glow & Geometry */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-gold-50/50 via-warm-beige/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+    <section id="home" className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#0c0c0f] overflow-hidden">
+      {/* 
+        Ambient Studio Spotlight Effect 
+        Replicating the iconic warm spherical paper lantern glow from the official poster
+      */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[950px] h-[550px] bg-gradient-to-b from-amber-500/15 via-[#caa468]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main 2-Column Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Left Column: Brand & Editorial Typography */}
+          {/* Left Column: Brand & Dark Luxury Typography */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Brand Kicker with Rounded Champagne Accent */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-warm-beige border border-sand-200/80 w-fit mb-6">
-              <span className="w-2 h-2 rounded-full bg-gold-500" />
-              <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-gold-700">
+            {/* Brand Kicker with Rounded Gold Accent */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/90 border border-amber-500/30 w-fit mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#caa468] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-[0.25em] font-semibold text-[#caa468]">
                 {BUSINESS_INFO.name} · {BUSINESS_INFO.locality}
               </span>
             </div>
 
-            {/* Main Headline & Supporting Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-charcoal-900 tracking-tight leading-[1.08] mb-4 text-balance">
-              Your Story.{' '}
-              <span className="italic font-light text-charcoal-800">Our Studio.</span>
+            {/* Main Headline matching the poster */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white tracking-tight leading-[1.08] mb-3 text-balance">
+              YOUR STORY.{' '}
+              <span className="text-stone-300 font-light block sm:inline">OUR STUDIO.</span>
             </h1>
 
-            <div className="mb-4 flex items-center gap-3">
-              <span className="font-serif italic text-2xl sm:text-3xl text-gold-600 tracking-wide">
-                {BUSINESS_INFO.supportingTagline}
+            {/* Script Italic Calligraphy matching the poster */}
+            <div className="mb-4">
+              <span className="font-script text-3xl sm:text-4xl lg:text-5xl text-[#caa468] tracking-wide block">
+                Unforgettable Moments.
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-charcoal-800 mb-4">
+            {/* Slogan & Catchphrase */}
+            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-amber-200/90 mb-3">
               "{BUSINESS_INFO.catchphrase}"
             </p>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-charcoal-700 font-light leading-relaxed max-w-xl mb-8">
-              {BUSINESS_INFO.description} Pre-post wedding, podcast studio, bride-to-be dining, model portfolios, kids, maternity, and commercial productions at Pumpwell, Mangalore.
+            <p className="text-base sm:text-lg text-stone-300 font-light leading-relaxed max-w-xl mb-8">
+              A creative space where ideas come to life and memories are made. Pre-post wedding, podcast studio, bride-to-be dining, model portfolios, kids, maternity, and commercial productions at Pumpwell, Mangalore.
             </p>
 
-            {/* Rounded CTA Buttons (PhotoFocuz style: rounded-full) */}
+            {/* Rounded CTA Buttons in Dark Gold Palette */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <button
                 onClick={onOpenBooking}
-                className="group inline-flex items-center justify-center gap-3 bg-charcoal-900 hover:bg-gold-600 text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#caa468] to-[#e0c793] hover:from-[#d8ad5e] hover:to-[#ebd08d] text-stone-950 px-8 py-4 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl cursor-pointer hover:scale-[1.02]"
               >
-                <Calendar className="w-4 h-4 text-gold-300 group-hover:text-white transition-colors" />
+                <Calendar className="w-4 h-4 text-stone-950" />
                 <span>Book a Shoot</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 onClick={onExploreStudio}
-                className="inline-flex items-center justify-center gap-2 border border-sand-200 hover:border-gold-400 bg-warm-beige/60 hover:bg-white text-charcoal-900 px-7 py-4 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-200 cursor-pointer shadow-xs"
+                className="inline-flex items-center justify-center gap-2 border border-amber-500/30 hover:border-[#caa468] bg-stone-900/80 hover:bg-stone-850 text-white px-7 py-4 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-200 cursor-pointer shadow-sm"
               >
-                <Compass className="w-4 h-4 text-gold-600" />
+                <Compass className="w-4 h-4 text-[#caa468]" />
                 <span>Explore Our Studio</span>
               </button>
             </div>
 
-            {/* Trust Anchors with Rounded Badges */}
-            <div className="flex flex-wrap items-center gap-y-3 gap-x-6 text-xs text-charcoal-700 pt-6 border-t border-sand-200">
-              <div className="flex items-center gap-2 bg-sand-50 px-3.5 py-1.5 rounded-full border border-sand-200/60">
-                <Users className="w-4 h-4 text-gold-600" />
-                <span className="font-medium text-charcoal-900">35 to 40</span>
+            {/* Trust Anchors with Obsidian Badges */}
+            <div className="flex flex-wrap items-center gap-y-3 gap-x-4 text-xs text-stone-300 pt-6 border-t border-amber-500/20">
+              <div className="flex items-center gap-2 bg-stone-900/90 px-3.5 py-1.5 rounded-full border border-amber-500/20">
+                <Users className="w-3.5 h-3.5 text-[#caa468]" />
+                <span className="font-semibold text-white">35 to 40</span>
                 <span>Gathering Space</span>
               </div>
-              <div className="flex items-center gap-2 bg-sand-50 px-3.5 py-1.5 rounded-full border border-sand-200/60">
-                <Sparkles className="w-4 h-4 text-gold-600" />
-                <span>8 Signature Shoot Formats</span>
+              <div className="flex items-center gap-2 bg-stone-900/90 px-3.5 py-1.5 rounded-full border border-amber-500/20">
+                <Sparkles className="w-3.5 h-3.5 text-[#caa468]" />
+                <span>8 Signature Formats</span>
               </div>
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="flex items-center gap-1.5 font-medium text-charcoal-900 hover:text-gold-600 transition-colors bg-sand-50 px-3.5 py-1.5 rounded-full border border-sand-200/60"
+                className="flex items-center gap-1.5 font-medium text-stone-200 hover:text-[#caa468] transition-colors bg-stone-900/90 px-3.5 py-1.5 rounded-full border border-amber-500/20"
               >
-                <Phone className="w-3.5 h-3.5 text-gold-600" />
+                <Phone className="w-3.5 h-3.5 text-[#caa468]" />
                 <span>{BUSINESS_INFO.phone}</span>
               </a>
             </div>
@@ -91,104 +97,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
           {/* Right Column: Hero Visual with Real Studio Photograph & Rounded 3XL Framing */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Outer Decorative Warm Halo */}
-              <div className="absolute -inset-3 bg-gradient-to-tr from-gold-200/40 via-sand-100/30 to-warm-beige/20 rounded-[32px] blur-xs pointer-events-none" />
+              {/* Outer Decorative Warm Golden Halo */}
+              <div className="absolute -inset-3 bg-gradient-to-tr from-amber-500/30 via-gold-500/10 to-transparent rounded-[36px] blur-md pointer-events-none" />
 
-              <div className="relative bg-warm-beige rounded-3xl overflow-hidden shadow-2xl border border-sand-200/80 aspect-4/5 sm:aspect-5/6">
+              <div className="relative bg-[#141419] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 aspect-4/5 sm:aspect-5/6">
                 <img
                   src={STUDIO_IMAGES.heroStudio}
                   alt="PHOTO.HOUZ Creators Studio Interior with Professional Softbox & Armchair Setup"
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('Screenshot_20261101_184154_WhatsApp_3659fc38.jpg')) {
-                      target.src = STUDIO_IMAGES.originalPoster;
-                    }
-                  }}
                 />
 
                 {/* Editorial Vignette & Label */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/80 via-charcoal-900/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0f]/90 via-[#0c0c0f]/20 to-transparent pointer-events-none" />
 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-[0.22em] text-gold-300 font-medium mb-2 border border-white/20">
+                  <div className="inline-block px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-[10px] uppercase tracking-[0.22em] text-[#caa468] font-medium mb-2 border border-amber-500/30">
                     PHOTO.HOUZ Studio Floor
                   </div>
                   <div className="font-serif text-xl sm:text-2xl font-normal tracking-wide">
                     The Signature Creators Suite
                   </div>
-                  <p className="text-xs text-white/85 font-light mt-1.5 leading-relaxed">
-                    Mid-century armchair, spherical lantern softbox, wood slat acoustics, and polished studio floor.
-                  </p>
-                </div>
-              </div>
-
-              {/* Floating Stat Pill with Rounded 2XL Frame */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-sand-200 shadow-xl hidden sm:flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-gold-50 flex items-center justify-center text-gold-600 font-serif text-lg font-bold border border-gold-200">
-                  35+
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-charcoal-700 font-semibold">
-                    Gathering Capacity
-                  </div>
-                  <div className="text-xs text-charcoal-900 font-medium">
-                    Workshops, Meets & Shoots
+                  <div className="text-xs text-stone-300 font-light mt-1 flex items-center gap-1.5">
+                    <MapPin className="w-3 h-3 text-[#caa468]" />
+                    <span>Pumpwell, Mangalore</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Full-width 4-Metric Grid Strip with Rounded 2XL Cards */}
-        <div className="mt-16 sm:mt-20 pt-8 border-t border-sand-200/80 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div className="bg-sand-50/70 border border-sand-200/60 p-5 rounded-2xl">
-            <div className="font-serif text-2xl sm:text-3xl font-light text-charcoal-900 tabular-nums">
-              35 – 40
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gold-600 font-semibold mt-1">
-              Guest Gathering Space
-            </div>
-            <div className="text-xs text-charcoal-700 mt-1 font-light">
-              Events, masterclasses, screenings
-            </div>
-          </div>
-
-          <div className="bg-sand-50/70 border border-sand-200/60 p-5 rounded-2xl">
-            <div className="font-serif text-2xl sm:text-3xl font-light text-charcoal-900 tabular-nums">
-              8+
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gold-600 font-semibold mt-1">
-              Specialized Shoots
-            </div>
-            <div className="text-xs text-charcoal-700 mt-1 font-light">
-              Portraits, maternity, brand, podcast
-            </div>
-          </div>
-
-          <div className="bg-sand-50/70 border border-sand-200/60 p-5 rounded-2xl">
-            <div className="font-serif text-2xl sm:text-3xl font-light text-charcoal-900 tabular-nums">
-              7 Key
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gold-600 font-semibold mt-1">
-              Studio Facilities
-            </div>
-            <div className="text-xs text-charcoal-700 mt-1 font-light">
-              Makeover room, projector, sound system
-            </div>
-          </div>
-
-          <div className="bg-sand-50/70 border border-sand-200/60 p-5 rounded-2xl">
-            <div className="font-serif text-2xl sm:text-3xl font-light text-charcoal-900 tabular-nums">
-              9606960990
-            </div>
-            <div className="text-xs uppercase tracking-wider text-gold-600 font-semibold mt-1">
-              Instant Studio Enquiry
-            </div>
-            <div className="text-xs text-charcoal-700 mt-1 font-light">
-              Call or WhatsApp available daily
             </div>
           </div>
         </div>

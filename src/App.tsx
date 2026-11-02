@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { StudioPosterBanner } from './components/StudioPosterBanner';
 import { StudioShowcase } from './components/StudioShowcase';
 import { ServicesSection } from './components/ServicesSection';
 import { StudioFeatures } from './components/StudioFeatures';
@@ -58,46 +59,52 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-charcoal-900 font-sans selection:bg-gold-200 selection:text-charcoal-900 antialiased">
-      {/* 1. PhotoFocuz-Inspired Rounded Pill Navbar */}
+    <div className="min-h-screen bg-[#0c0c0f] text-[#f5f4f0] font-sans selection:bg-[#caa468] selection:text-[#0c0c0f] antialiased">
+      {/* 1. Dark Luxury Rounded Pill Navbar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
       <main>
-        {/* 2. Hero Section with Real Studio Photograph */}
+        {/* 2. Hero Section with Real Studio Photograph & Warm Spotlight Glow */}
         <Hero
           onOpenBooking={() => handleOpenBooking()}
           onExploreStudio={scrollToStudio}
         />
 
-        {/* 3. Studio Showcase Section with Uploaded Assets */}
+        {/* 3. Official Studio Poster Banner Showcase (Full Image with Down-Right Logo) */}
+        <StudioPosterBanner
+          onOpenBooking={() => handleOpenBooking('Studio Space Hire')}
+          onOpenLightbox={handleOpenLightbox}
+        />
+
+        {/* 4. Studio Showcase Section with Uploaded Assets */}
         <StudioShowcase
           onOpenBooking={() => handleOpenBooking('Studio Space Hire')}
           onOpenLightbox={handleOpenLightbox}
         />
 
-        {/* 4. Our Services Section (All 8 Services in Rounded Cards) */}
+        {/* 5. Our Services Section (All 8 Services in Rounded Dark Cards) */}
         <ServicesSection onOpenBooking={handleOpenBooking} />
 
-        {/* 5. Studio Features (7 Facilities in Rounded-3XL Cards) */}
+        {/* 6. Studio Features (7 Facilities matching the poster with Gold Icons) */}
         <StudioFeatures onOpenBooking={() => handleOpenBooking()} />
 
-        {/* 6. Gathering Space (The Real 35-40 Capacity Photo & Venue) */}
+        {/* 7. Gathering Space (The Real 35-40 Capacity Photo & Venue) */}
         <GatheringSpace onOpenBooking={handleOpenBooking} />
 
-        {/* 7. Gallery Section (Editorial Photography & Lightbox) */}
+        {/* 8. Gallery Section (Uncropped Photography & Lightbox) */}
         <GallerySection onOpenBooking={handleOpenBooking} />
 
-        {/* 8. About PHOTO.HOUZ Section */}
+        {/* 9. About PHOTO.HOUZ Section */}
         <AboutSection onOpenBooking={() => handleOpenBooking()} />
 
-        {/* 9. Studio Location & Google Maps */}
+        {/* 10. Studio Location & Google Maps */}
         <StudioLocationMap />
 
-        {/* 10. Contact & Booking Section */}
+        {/* 11. Contact & Booking Section */}
         <ContactSection initialService={selectedService} />
       </main>
 
-      {/* 10. Footer */}
+      {/* 12. Footer */}
       <Footer />
 
       {/* Booking Quick Modal */}
@@ -107,15 +114,15 @@ export default function App() {
         preselectedService={selectedService}
       />
 
-      {/* Global Image Lightbox Modal with Rounded-3XL Frame */}
+      {/* Global Image Lightbox Modal with Rounded-3XL Dark Frame */}
       {lightboxState.isOpen && (
         <div
           onClick={handleCloseLightbox}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 animate-in fade-in duration-200"
         >
           <button
             onClick={handleCloseLightbox}
-            className="absolute top-6 right-6 text-white/80 hover:text-white p-3 rounded-full hover:bg-white/10 z-50 cursor-pointer transition-colors"
+            className="absolute top-6 right-6 text-stone-300 hover:text-white p-3 rounded-full hover:bg-stone-800 z-50 cursor-pointer transition-colors"
             aria-label="Close"
           >
             <X className="w-6 h-6" />
@@ -123,22 +130,22 @@ export default function App() {
 
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/20"
+            className="max-w-4xl w-full bg-[#14141c] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30"
           >
-            <div className="bg-black flex items-center justify-center max-h-[70vh]">
+            <div className="bg-black flex items-center justify-center max-h-[75vh] p-2">
               <img
                 src={lightboxState.imageUrl}
                 alt={lightboxState.title}
-                className="max-w-full max-h-[70vh] object-contain"
+                className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="p-6 sm:p-7 bg-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-sand-200">
+            <div className="p-6 sm:p-7 bg-[#14141c] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-amber-500/20 text-white">
               <div>
-                <h3 className="font-serif text-xl font-normal text-charcoal-900">
+                <h3 className="font-serif text-xl font-normal text-white">
                   {lightboxState.title}
                 </h3>
-                <p className="text-xs text-charcoal-700 font-light mt-1">
+                <p className="text-xs text-stone-300 font-light mt-1">
                   {lightboxState.caption}
                 </p>
               </div>
@@ -147,7 +154,7 @@ export default function App() {
                   handleCloseLightbox();
                   handleOpenBooking(lightboxState.title);
                 }}
-                className="bg-charcoal-900 hover:bg-gold-600 text-white text-xs uppercase tracking-widest font-semibold px-7 py-3 rounded-full transition-all duration-200 cursor-pointer shrink-0 shadow-xs hover:shadow-md"
+                className="bg-gradient-to-r from-[#caa468] to-[#e0c793] text-stone-950 text-xs uppercase tracking-widest font-semibold px-7 py-3 rounded-full transition-all duration-200 cursor-pointer shrink-0 shadow-md hover:scale-105"
               >
                 Book This Setup
               </button>
@@ -160,18 +167,18 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5">
         <a
           href={`tel:${BUSINESS_INFO.phone}`}
-          className="bg-white hover:bg-gold-50 text-charcoal-900 p-3.5 rounded-full shadow-lg border border-sand-200/90 transition-transform duration-200 hover:scale-110 flex items-center justify-center"
+          className="bg-stone-900/90 hover:bg-stone-850 text-white p-3.5 rounded-full shadow-2xl border border-amber-500/40 transition-transform duration-200 hover:scale-110 flex items-center justify-center"
           title="Call PHOTO.HOUZ"
           aria-label="Call studio"
         >
-          <Phone className="w-4 h-4 text-gold-600" />
+          <Phone className="w-4 h-4 text-[#caa468]" />
         </a>
 
         <a
           href={BUSINESS_INFO.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-lg transition-transform duration-200 hover:scale-110 flex items-center justify-center"
+          className="bg-emerald-600 hover:bg-emerald-500 text-stone-950 p-3.5 rounded-full shadow-2xl transition-transform duration-200 hover:scale-110 flex items-center justify-center"
           title="Chat on WhatsApp"
           aria-label="WhatsApp chat"
         >

@@ -44,6 +44,8 @@ export const BUSINESS_INFO = {
 
 // Studio Facility & Equipment Assets
 export const STUDIO_IMAGES = {
+  darkPoster: '/assets/aistudio/Screenshot_20261102_184453_Gallery_c4129ed3.jpg',
+  studioLogo: '/assets/aistudio/Screenshot_20261102_184459_Gallery_360f6d37.jpg',
   heroStudio: '/assets/aistudio/d7dd6aea-c2a8-4b94-b00a-56ac573bef8c_fd228380.jpeg',
   loungeConsultation: '/assets/aistudio/317e3088-5f79-4c66-b11a-31268cfa901e_d653324a.jpeg',
   podcastStudio: '/assets/aistudio/5a9b4a30-8a7b-4865-b0b6-1fb9da80c775_2765790a.jpeg',
@@ -51,7 +53,7 @@ export const STUDIO_IMAGES = {
   tripleBackdrops: '/assets/aistudio/d143db48-edb0-4ad7-943f-37fdb0b6d739_bb3c4865.jpeg',
   spaciousFloor: '/assets/aistudio/1a4e6643-89bd-485e-82ef-96c7f7734539_eaf8b1b9.jpeg',
   gatheringWorkshop: '/assets/aistudio/3ef1f8b9-2499-4379-a6c5-54f079fefb05_a4417d8e.jpeg',
-  originalPoster: '/assets/aistudio/Screenshot_20261101_184154_WhatsApp_3659fc38.jpg',
+  originalPoster: '/assets/aistudio/Screenshot_20261102_184453_Gallery_c4129ed3.jpg',
   instaProfile: '/assets/aistudio/Screenshot_20261101_205110_Instagram_1e61aaf0.jpg',
 };
 
