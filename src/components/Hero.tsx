@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main 2-Column Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Left Column: Brand & Dark Luxury Typography */}
+          {/* Left Column: Brand & Dark Luxury Typography (Restored to exact previous style per user screenshot) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Brand Kicker with Rounded Gold Accent */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/90 border border-amber-500/30 w-fit mb-6 shadow-sm">
@@ -56,6 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
             {/* Rounded CTA Buttons in Dark Gold Palette */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <button
+                type="button"
                 onClick={onOpenBooking}
                 className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#caa468] to-[#e0c793] hover:from-[#d8ad5e] hover:to-[#ebd08d] text-stone-950 px-8 py-4 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl cursor-pointer hover:scale-[1.02]"
               >
@@ -65,6 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
               </button>
 
               <button
+                type="button"
                 onClick={onExploreStudio}
                 className="inline-flex items-center justify-center gap-2 border border-amber-500/30 hover:border-[#caa468] bg-stone-900/80 hover:bg-stone-850 text-white px-7 py-4 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-200 cursor-pointer shadow-sm"
               >
@@ -94,33 +96,41 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreStudio }) =>
             </div>
           </div>
 
-          {/* Right Column: Hero Visual with Real Studio Photograph & Rounded 3XL Framing */}
+          {/* Right Column: Hero Visual with Real Studio Photograph (Full, bold, not small, not half) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Outer Decorative Warm Golden Halo */}
               <div className="absolute -inset-3 bg-gradient-to-tr from-amber-500/30 via-gold-500/10 to-transparent rounded-[36px] blur-md pointer-events-none" />
 
-              <div className="relative bg-[#141419] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 aspect-4/5 sm:aspect-5/6">
-                <img
-                  src={STUDIO_IMAGES.heroStudio}
-                  alt="PHOTO.HOUZ Creators Studio Interior with Professional Softbox & Armchair Setup"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="relative bg-[#141419] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 p-2 sm:p-2.5">
+                {/* 100% Full Aspect Ratio View (Full frame, 2:3 matching native photo) */}
+                <div className="relative overflow-hidden rounded-2xl bg-black aspect-2/3 w-full">
+                  <img
+                    src={STUDIO_IMAGES.heroStudio}
+                    alt="PHOTO.HOUZ Creators Studio Royal Heritage Bridal Shoot at Pumpwell, Mangalore"
+                    className="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-700 block"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
 
-                {/* Editorial Vignette & Label */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0f]/90 via-[#0c0c0f]/20 to-transparent pointer-events-none" />
-
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="inline-block px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-[10px] uppercase tracking-[0.22em] text-[#caa468] font-medium mb-2 border border-amber-500/30">
-                    PHOTO.HOUZ Studio Floor
+                {/* Description written DOWN below the image (not on top of it) */}
+                <div className="pt-3 pb-1 px-3 flex items-center justify-between text-white">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.22em] text-[#caa468] font-semibold">
+                      PHOTO.HOUZ Signature Suite
+                    </div>
+                    <div className="font-serif text-base font-normal text-white">
+                      Royal Heritage Terracotta Stage
+                    </div>
                   </div>
-                  <div className="font-serif text-xl sm:text-2xl font-normal tracking-wide">
-                    The Signature Creators Suite
-                  </div>
-                  <div className="text-xs text-stone-300 font-light mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 text-[#caa468]" />
-                    <span>Pumpwell, Mangalore</span>
+                  <div className="text-right">
+                    <div className="text-[10px] text-stone-400 font-light flex items-center gap-1 justify-end">
+                      <MapPin className="w-3 h-3 text-[#caa468]" />
+                      <span>Pumpwell</span>
+                    </div>
+                    <div className="text-[11px] text-stone-300 font-medium">
+                      Mangalore
+                    </div>
                   </div>
                 </div>
               </div>

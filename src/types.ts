@@ -35,6 +35,8 @@ export interface StudioShowcaseItem {
   description: string;
   imageUrl: string;
   tag: string;
+  features?: string[];
+  equipment?: string[];
 }
 
 export interface BookingFormData {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, MessageSquare, Calendar, Users, CheckCircle2, ArrowRight, Copy, Check, MapPin, ExternalLink, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../data/studioData';
 import { BookingFormData } from '../types';
@@ -18,6 +18,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
     estimatedGuests: '1-3 People',
     notes: '',
   });
+
+  useEffect(() => {
+    if (initialService) {
+      setFormData((prev) => ({ ...prev, service: initialService }));
+    }
+  }, [initialService]);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);

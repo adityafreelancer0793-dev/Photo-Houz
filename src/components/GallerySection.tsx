@@ -12,11 +12,12 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const categories = [
-    { key: 'all', label: 'All Works (12)' },
-    { key: 'bride', label: 'Bride-to-Be' },
-    { key: 'prewedding', label: 'Pre-Wedding & Couples' },
-    { key: 'model', label: 'Model & Portraits' },
-    { key: 'creators', label: 'Creators & Events' },
+    { key: 'all', label: `All Works (${GALLERY_PHOTOS.length})` },
+    { key: 'bride', label: 'Bride-to-Be & Dining' },
+    { key: 'prewedding', label: 'Pre & Post Wedding' },
+    { key: 'model', label: 'Model & Groom' },
+    { key: 'kids', label: 'Kids & Milestones' },
+    { key: 'studio', label: 'Creative Studio Sets' },
   ];
 
   const filteredPhotos =
@@ -24,23 +25,45 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenBooking })
       ? GALLERY_PHOTOS
       : GALLERY_PHOTOS.filter((p) => {
           if (activeCategory === 'bride') {
-            return p.categoryLabel.toLowerCase().includes('bride');
+            return (
+              p.categoryLabel.toLowerCase().includes('bride') ||
+              p.categoryLabel.toLowerCase().includes('dining') ||
+              p.categoryLabel.toLowerCase().includes('celebration')
+            );
           }
           if (activeCategory === 'prewedding') {
-            return p.category === 'prewedding' || p.categoryLabel.toLowerCase().includes('pre-wedding');
+            return (
+              p.category === 'prewedding' ||
+              p.categoryLabel.toLowerCase().includes('wedding') ||
+              p.categoryLabel.toLowerCase().includes('couple')
+            );
           }
           if (activeCategory === 'model') {
             return (
               p.categoryLabel.toLowerCase().includes('model') ||
-              p.categoryLabel.toLowerCase().includes('groom')
+              p.categoryLabel.toLowerCase().includes('groom') ||
+              p.categoryLabel.toLowerCase().includes('fashion') ||
+              p.categoryLabel.toLowerCase().includes('streetwear') ||
+              p.categoryLabel.toLowerCase().includes('portrait')
             );
           }
-          if (activeCategory === 'creators') {
+          if (activeCategory === 'kids') {
             return (
-              p.category === 'podcast' ||
+              p.category === 'baby' ||
+              p.category === 'maternity' ||
+              p.categoryLabel.toLowerCase().includes('kid') ||
+              p.categoryLabel.toLowerCase().includes('milestone')
+            );
+          }
+          if (activeCategory === 'studio') {
+            return (
               p.category === 'studio' ||
-              p.categoryLabel.toLowerCase().includes('creators') ||
-              p.categoryLabel.toLowerCase().includes('gathering')
+              p.category === 'podcast' ||
+              p.categoryLabel.toLowerCase().includes('studio') ||
+              p.categoryLabel.toLowerCase().includes('creator') ||
+              p.categoryLabel.toLowerCase().includes('alcove') ||
+              p.categoryLabel.toLowerCase().includes('canopy') ||
+              p.categoryLabel.toLowerCase().includes('stage')
             );
           }
           return p.category === activeCategory;

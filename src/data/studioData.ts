@@ -46,19 +46,23 @@ export const BUSINESS_INFO = {
 export const STUDIO_IMAGES = {
   darkPoster: '/assets/aistudio/Screenshot_20261102_184453_Gallery_c4129ed3.jpg',
   studioLogo: '/assets/aistudio/Screenshot_20261102_184459_Gallery_360f6d37.jpg',
-  heroStudio: '/assets/aistudio/d7dd6aea-c2a8-4b94-b00a-56ac573bef8c_fd228380.jpeg',
-  loungeConsultation: '/assets/aistudio/317e3088-5f79-4c66-b11a-31268cfa901e_d653324a.jpeg',
-  podcastStudio: '/assets/aistudio/5a9b4a30-8a7b-4865-b0b6-1fb9da80c775_2765790a.jpeg',
-  btsOctabox: '/assets/aistudio/a8d61f02-3440-40f9-b819-755cd7a8892d_06786176.jpeg',
-  tripleBackdrops: '/assets/aistudio/d143db48-edb0-4ad7-943f-37fdb0b6d739_bb3c4865.jpeg',
-  spaciousFloor: '/assets/aistudio/1a4e6643-89bd-485e-82ef-96c7f7734539_eaf8b1b9.jpeg',
+  curvedBoucleSuite: '/assets/aistudio/Screenshot_20261106_143607_Gallery_838555bd.jpg',
+  spotlightArchFloral: '/assets/aistudio/Screenshot_20261106_143617_Gallery_070566ef.jpg',
+  terracottaPodcastStage: '/assets/aistudio/IMG_0075_1d114b0f.JPG',
+  heroStudio: '/assets/aistudio/IMG_0386_1ab76acc.JPG',
+  loungeConsultation: '/assets/aistudio/Screenshot_20261106_143617_Gallery_070566ef.jpg',
+  podcastStudio: '/assets/aistudio/IMG_0075_1d114b0f.JPG',
   gatheringWorkshop: '/assets/aistudio/3ef1f8b9-2499-4379-a6c5-54f079fefb05_a4417d8e.jpeg',
   originalPoster: '/assets/aistudio/Screenshot_20261102_184453_Gallery_c4129ed3.jpg',
   instaProfile: '/assets/aistudio/Screenshot_20261101_205110_Instagram_1e61aaf0.jpg',
 };
 
-// 12 Newly Uploaded Real Portfolio Images
+// 25 Authentic Client & Studio Images from PHOTO.HOUZ
 export const PORTFOLIO_IMAGES = {
+  // Signature Hero Production (Nov 6)
+  royalHeritageTerracottaBride: '/assets/aistudio/IMG_0386_1ab76acc.JPG',
+
+  // Existing 12 client portraits & sets
   maleCasualSofa: '/assets/aistudio/Screenshot_20261101_203703_Instagram_1f71766e.jpg',
   creatorSonyFX3: '/assets/aistudio/Screenshot_20261101_203904_Instagram_488c6894.jpg',
   brideGreenSareePose1: '/assets/aistudio/Screenshot_20261101_203618_Instagram_7823d902.jpg',
@@ -71,6 +75,20 @@ export const PORTFOLIO_IMAGES = {
   coupleLaughingTogether: '/assets/aistudio/Screenshot_20261101_203814_Instagram_beaf4a06.jpg',
   coupleLoungeChemistry: '/assets/aistudio/Screenshot_20261101_203819_Instagram_761a998b.jpg',
   maleStreetwearOrange: '/assets/aistudio/Screenshot_20261101_203848_Instagram_784de3fa.jpg',
+
+  // 12 Newly Uploaded authentic portfolio & studio setup images
+  groomLadderSuit: '/assets/aistudio/Screenshot_20261106_143413_Gallery_0ebbb114.jpg',
+  peachAlcoveShapes: '/assets/aistudio/Screenshot_20261106_143558_Gallery_d9cde3b7.jpg',
+  brideCelebrationDining: '/assets/aistudio/Screenshot_20261106_143316_Gallery_75cbc670.jpg',
+  toddlerMilestoneScooter: '/assets/aistudio/Screenshot_20261106_143425_Gallery_e7d04fba.jpg',
+  windowGoboArchStage: '/assets/aistudio/Screenshot_20261106_143516_Gallery_6569f921.jpg',
+  blackCoutureEditorial: '/assets/aistudio/Screenshot_20261106_143451_Gallery_67a1b3b7.jpg',
+  regalTempleJewelryBride: '/assets/aistudio/Screenshot_20261106_143436_Gallery_866dd877.jpg',
+  velvetBanquetDining: '/assets/aistudio/Screenshot_20261106_143322_Gallery_d16af9b7.jpg',
+  preweddingFloralEmbrace: '/assets/aistudio/Screenshot_20261106_143458_Gallery_f4e7a707.jpg',
+  crimsonKanjeevaramBride: '/assets/aistudio/Screenshot_20261106_143521_Gallery_03257afa.jpg',
+  floralCanopyCaneLounge: '/assets/aistudio/Screenshot_20261106_143612_Gallery_b402df0f.jpg',
+  vintageCarvedVanity: '/assets/aistudio/Screenshot_20261106_143550_Gallery_fb592527.jpg',
 };
 
 export const SERVICES: ServiceItem[] = [
@@ -226,81 +244,193 @@ export const STUDIO_FEATURES: StudioFeature[] = [
 
 export const STUDIO_SHOWCASE: StudioShowcaseItem[] = [
   {
-    id: 'main-interior',
-    title: 'Signature Creators Lounge & Floor',
-    subtitle: 'Warm Aesthetic Ambiance',
+    id: 'curved-boucle-suite',
+    title: 'White Sheer Curtains & Curved Bouclé Creator Suite',
+    subtitle: 'Bright High-Key Production & Interview Floor',
     description:
-      'Warm beige interior, signature spherical lantern softbox, mid-century modern armchair, circular jute rug, and natural fluted wood acoustic wall.',
-    imageUrl: STUDIO_IMAGES.heroStudio,
-    tag: 'Main Floor',
+      'A bright, pristine production setup featuring full-length sheer white curtains, an organic curved cream bouclé sofa with spherical accent pillows, twin tub armchairs, and a matching square ottoman. Equipped with a heavy-duty overhead boom arm, professional beauty dish softbox with counterweight, and a dedicated 4K camera tripod station—perfect for creator interviews, podcast panels, lifestyle portraits, and brand campaigns.',
+    imageUrl: STUDIO_IMAGES.curvedBoucleSuite,
+    tag: 'Creator Suite',
+    features: [
+      'Heavy-duty overhead boom arm with black & yellow beauty dish softbox',
+      'Curved cream bouclé lounge sofa, spherical pillows & twin armchairs',
+      'Floor-to-ceiling sheer white curtain backdrop for soft daylight diffusion',
+      'Camera tripod filming station with monitor framing & potted greenery',
+    ],
+    equipment: [
+      'Professional Beauty Dish Softbox on Articulating Boom Arm',
+      '4K Camera Rig on Fluid-Head Professional Floor Tripod',
+      'Curved Cream Bouclé Lounge Sofa + 2 Swivel Tub Armchairs + Ottoman',
+      'Indoor Ficus Plant & Pedestal Dried Floral Accent Styling',
+    ],
   },
   {
-    id: 'gathering-hall',
-    title: '35 to 40 Gathering & Workshop Hall',
-    subtitle: 'Screenings, Meets & Masterclasses',
+    id: 'spotlight-arch-floral',
+    title: 'Architectural Arch & Spotlit Floral Canopy Stage',
+    subtitle: 'Dual-Light Staging & Vintage Brass Candle Alcoves',
     description:
-      'Versatile seating for 35 to 40 guests facing a motorized HD conference projector screen, festoon ambient lighting, and tuned audio system in Pumpwell, Mangalore.',
-    imageUrl: STUDIO_IMAGES.gatheringWorkshop,
-    tag: 'Gathering Hall',
+      'A moody, artistic staging set against a white architectural wall featuring three recessed arched alcoves holding vintage brass lanterns, framed by a delicate ceiling canopy of suspended white blossoms. Calibrated with a dual-lighting rig—a large spherical lantern diffuser key light paired with a snoot spotlight casting a focused theatrical beam onto the woven rattan table, cylindrical fluted plinth, dried pampas grass vases, and curved armchair on a circular jute rug.',
+    imageUrl: STUDIO_IMAGES.spotlightArchFloral,
+    tag: 'Arch & Floral Stage',
+    features: [
+      'White architectural arch wall with 3 recessed candle alcoves & lanterns',
+      'Overhead ceiling floral canopy with lush white & cream blossoms',
+      'Dual studio lighting: large spherical lantern diffuser + focused snoot spotlight',
+      'Handwoven rattan table, fluted pedestal stand & pampas grass arrangements',
+    ],
+    equipment: [
+      'Large Spherical Lantern Overhead Key Light Diffuser',
+      'High-Output Snoot Spotlight with Focused Conical Beam',
+      'Handcrafted Woven Rattan Accent Table & Cylindrical Plinth',
+      'Circular Jute Area Rug & Low-Back Cream Upholstered Armchair',
+    ],
   },
   {
-    id: 'podcast-setup',
-    title: 'Creator Podcast & Interview Studio',
-    subtitle: 'Acoustic Soundstage & Dual Mics',
+    id: 'terracotta-podcast-stage',
+    title: 'Terracotta Sunset Podcast & Celebrity Interview Stage',
+    subtitle: 'Warm Venetian Blind Gobo Projections & Broadcast Audio',
     description:
-      'Dedicated podcast lounge with bouclé armchairs, acoustic wood slats with warm LED lighting, and broadcast-grade microphone boom arms.',
-    imageUrl: STUDIO_IMAGES.podcastStudio,
-    tag: 'Podcast Studio',
-  },
-  {
-    id: 'lighting-gear',
-    title: 'Professional Shooting Space & Octabox',
-    subtitle: 'Calibrated Strobe & Grip',
-    description:
-      'Full equipment grip with heavy-duty boom arms, large octabox softboxes, seamless backdrops, and tethered camera stations.',
-    imageUrl: STUDIO_IMAGES.btsOctabox,
-    tag: 'Shooting Space',
-  },
-  {
-    id: 'creative-backgrounds',
-    title: 'Multiple Creative Backgrounds',
-    subtitle: 'Seamless Roll System',
-    description:
-      'Triple seamless backdrop rolls (clean white, warm beige, neutral gray) on C-stands with direct access to camera gear and lens shelf.',
-    imageUrl: STUDIO_IMAGES.tripleBackdrops,
-    tag: 'Backdrops',
-  },
-  {
-    id: 'spacious-floor',
-    title: 'Wide Cyclorama & Production Bay',
-    subtitle: 'High Ceilings & Large Sets',
-    description:
-      'Spacious studio floor with ample clearance for model choreography, group portraits, commercial set builds, and full-body lighting.',
-    imageUrl: STUDIO_IMAGES.spaciousFloor,
-    tag: 'Spacious Setup',
-  },
-  {
-    id: 'client-lounge',
-    title: 'Client Styling & Consultation Lounge',
-    subtitle: 'Elegance & Relaxation',
-    description:
-      'Curated bouclé seating, marble coffee table, brass floor lamp, and olive greenery for bridal consultations and creative pre-production.',
-    imageUrl: STUDIO_IMAGES.loungeConsultation,
-    tag: 'Client Lounge',
-  },
-  {
-    id: 'bridal-editorial',
-    title: 'Bridal & Editorial Portraiture',
-    subtitle: 'Directional Lighting Mastery',
-    description:
-      'Fine art bridal and fashion portraits captured inside PHOTO.HOUZ, showcasing jewelry detail, skin tones, and rich golden fabrics.',
-    imageUrl: PORTFOLIO_IMAGES.brideGreenSareePose1,
-    tag: 'Portraits',
+      'A high-character studio stage set against a rich curved terracotta sunset wall featuring realistic venetian blind gobo shadow projections. Furnished with an ergonomic rounded peach swivel lounge armchair, broadcast microphone mounted on an articulating heavy-duty boom arm, mid-century wooden tripod floor lamp with cream fabric shade, and leafy potted monstera greenery on a polished reflective studio floor.',
+    imageUrl: STUDIO_IMAGES.terracottaPodcastStage,
+    tag: 'Podcast Stage',
+    features: [
+      'Curved terracotta sunset backdrop with projected venetian blind gobo shadows',
+      'Broadcast-grade microphone on multi-joint articulating boom arm',
+      'Contemporary rounded peach lounge chair & mid-century tripod floor lamp',
+      'Polished reflective studio floor & acoustic sound-treated environment',
+    ],
+    equipment: [
+      'Broadcast Studio Microphone on Heavy Articulated Boom Arm',
+      'Window Venetian Blind Gobo Optical Projection Lighting System',
+      'Mid-Century Wooden Tripod Floor Lamp with Natural Fabric Shade',
+      'Ergonomic Peach Swivel Armchair & Ceramic Potted Monstera Plant',
+    ],
   },
 ];
 
-// All 12 Newly Uploaded Authentic Client & Studio Works
+// All 25 Authentic Client & Studio Works (Completely uncropped, full visibility)
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
+  // Signature Spotlight Masterpiece (Nov 6)
+  {
+    id: 'gal-hero-royal-bride',
+    title: 'Signature Royal Heritage Bride on Terracotta Stage',
+    category: 'model',
+    categoryLabel: 'Bride-to-Be',
+    imageUrl: PORTFOLIO_IMAGES.royalHeritageTerracottaBride,
+    aspect: 'portrait',
+    caption: 'Official PHOTO.HOUZ bridal production featuring emerald-rose silk Kanjeevaram saree, antique temple jewelry, and venetian gobo shadow projections at Pumpwell, Mangalore.',
+  },
+  // 12 Uploaded Client & Studio Images
+  {
+    id: 'gal-groom-ladder',
+    title: 'Editorial Groom with Studio Stepladder',
+    category: 'model',
+    categoryLabel: 'Model & Groom',
+    imageUrl: PORTFOLIO_IMAGES.groomLadderSuit,
+    aspect: 'portrait',
+    caption: 'Architectural black designer suit styling with natural pose and dark wooden ladder prop on cyclorama.',
+  },
+  {
+    id: 'gal-regal-jewelry-bride',
+    title: 'Regal Temple Jewelry Bridal Close-Up',
+    category: 'model',
+    categoryLabel: 'Bride-to-Be',
+    imageUrl: PORTFOLIO_IMAGES.regalTempleJewelryBride,
+    aspect: 'portrait',
+    caption: 'Intricate kundan temple craftsmanship, bridal nath, and traditional maang tikka captured with micro-detail lighting.',
+  },
+  {
+    id: 'gal-toddler-milestone',
+    title: '2nd Birthday Milestone & Vintage Wooden Scooter',
+    category: 'baby',
+    categoryLabel: 'Kids & Milestones',
+    imageUrl: PORTFOLIO_IMAGES.toddlerMilestoneScooter,
+    aspect: 'portrait',
+    caption: 'Cozy, gentle baby shoot featuring handcrafted wooden toy scooter, playful bubbles, and pastel styling.',
+  },
+  {
+    id: 'gal-crimson-kanjeevaram',
+    title: 'Crimson Kanjeevaram Silk Heritage Bride',
+    category: 'model',
+    categoryLabel: 'Bride-to-Be',
+    imageUrl: PORTFOLIO_IMAGES.crimsonKanjeevaramBride,
+    aspect: 'portrait',
+    caption: 'Classic South Indian bridal trousseau with pure gold temple waistbelt, jhumkas, and radiant smile.',
+  },
+  {
+    id: 'gal-bride-celebration-dining',
+    title: 'Bride-to-Be Intimate Dining Celebration',
+    category: 'studio',
+    categoryLabel: 'Bride-to-Be Dining',
+    imageUrl: PORTFOLIO_IMAGES.brideCelebrationDining,
+    aspect: 'portrait',
+    caption: 'Curated floral arch, frosted celebration cake, satin-ribboned gift boxes, and dining setup for bridal celebrations.',
+  },
+  {
+    id: 'gal-black-couture',
+    title: 'High-Fashion Sheer Black Couture Editorial',
+    category: 'model',
+    categoryLabel: 'Fashion Editorial',
+    imageUrl: PORTFOLIO_IMAGES.blackCoutureEditorial,
+    aspect: 'portrait',
+    caption: 'High-contrast studio lighting highlighting textured fabric movement and bold silhouette.',
+  },
+  {
+    id: 'gal-prewedding-floral',
+    title: 'Intimate Pre-Wedding Floral Embrace',
+    category: 'prewedding',
+    categoryLabel: 'Pre & Post Wedding',
+    imageUrl: PORTFOLIO_IMAGES.preweddingFloralEmbrace,
+    aspect: 'portrait',
+    caption: 'Soft romantic couple chemistry captured with fresh blush rose bouquet and delicate studio lighting.',
+  },
+  {
+    id: 'gal-velvet-banquet',
+    title: 'Candlelit Velvet Banquet Table Setup',
+    category: 'studio',
+    categoryLabel: 'Celebration Dining',
+    imageUrl: PORTFOLIO_IMAGES.velvetBanquetDining,
+    aspect: 'portrait',
+    caption: 'Romantic evening celebration staging with crimson roses, taper candles, and personalized party banquet decor.',
+  },
+  {
+    id: 'gal-peach-alcove',
+    title: 'Abstract Organic Shapes & Peach Lounge Alcove',
+    category: 'studio',
+    categoryLabel: 'Creative Studio Set',
+    imageUrl: PORTFOLIO_IMAGES.peachAlcoveShapes,
+    aspect: 'portrait',
+    caption: 'Modern architectural wall relief with sage green and terracotta shapes, paired with our plush peach armchair.',
+  },
+  {
+    id: 'gal-window-gobo',
+    title: 'Golden Window Sunlight Gobo Arch Stage',
+    category: 'studio',
+    categoryLabel: 'Creative Studio Set',
+    imageUrl: PORTFOLIO_IMAGES.windowGoboArchStage,
+    aspect: 'portrait',
+    caption: 'Soft natural window shadow projections casting golden hour warmth across woven rattan and neutral archways.',
+  },
+  {
+    id: 'gal-floral-canopy',
+    title: 'Suspended Floral Canopy & Cane Lounge Set',
+    category: 'studio',
+    categoryLabel: 'Creative Studio Set',
+    imageUrl: PORTFOLIO_IMAGES.floralCanopyCaneLounge,
+    aspect: 'portrait',
+    caption: 'Ethereal floral ceiling installation with artisanal cane chairs, perfect for maternity and celebration shoots.',
+  },
+  {
+    id: 'gal-vintage-vanity',
+    title: 'Vintage Carved Vanity & Ornate Mirror Set',
+    category: 'studio',
+    categoryLabel: 'Creative Studio Set',
+    imageUrl: PORTFOLIO_IMAGES.vintageCarvedVanity,
+    aspect: 'portrait',
+    caption: 'Handcrafted antique wooden dressing console with arched mirror, ideal for bridal trousseau prep shoots.',
+  },
+
+  // 12 Authentic Client Portraits & Productions
   {
     id: 'gal-bride-1',
     title: 'Royal Bridal Portrait in Green Silk',
@@ -395,7 +525,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'gal-bride-table',
     title: 'Curated Bride-to-Be Banquet Dining',
     category: 'studio',
-    categoryLabel: 'Bride to be Dining',
+    categoryLabel: 'Bride-to-Be Dining',
     imageUrl: PORTFOLIO_IMAGES.brideToBeTableSetup,
     aspect: 'landscape',
     caption: 'Personalized "Bride to Be" dining plates, golden rose florals, and champagne runner in our 35-40 event space at Pumpwell.',

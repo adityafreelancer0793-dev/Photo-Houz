@@ -36,7 +36,13 @@ export default function App() {
   });
 
   const handleOpenBooking = (serviceName?: string) => {
-    setSelectedService(serviceName || '');
+    const targetService = serviceName || 'Model Shoots';
+    setSelectedService(targetService);
+    // Smoothly scroll down to the contact & booking form section
+    const contactEl = document.querySelector('#contact');
+    if (contactEl) {
+      contactEl.scrollIntoView({ behavior: 'smooth' });
+    }
     setBookingOpen(true);
   };
 

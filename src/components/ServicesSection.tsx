@@ -47,7 +47,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
               className="group bg-[#14141a] border border-amber-500/20 rounded-3xl hover:border-[#caa468] transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 p-3"
             >
               <div>
-                {/* Image Container with Rounded 2XL Corner */}
+                {/* Image Container with Rounded 2XL Corner - Full Picture View */}
                 <div className="relative aspect-4/5 overflow-hidden rounded-2xl bg-black border border-white/5">
                   <img
                     src={service.imageUrl}
@@ -58,7 +58,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity" />
 
                   {/* Clean Rounded-Full Editorial Numbering */}
-                  <div className="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-[#caa468] text-[10px] font-semibold tracking-wider px-3 py-1 rounded-full border border-amber-500/30 shadow-xs">
+                  <div className="absolute top-3 left-3 bg-stone-900/90 backdrop-blur-md text-[#caa468] text-[10px] font-semibold tracking-wider px-3 py-1 rounded-full border border-amber-500/30 shadow-xs z-10">
                     0{index + 1}
                   </div>
                 </div>
